@@ -1,5 +1,5 @@
-# STEGOL
-Simple Testing Enhancements for the GO Language
+# STEGoL
+Simple Testing Enhancements for the Go Language
 
 ## Introduction
 
@@ -17,7 +17,7 @@ T.B.C.
 
 ```Go
 
-import stegol "github.com/synesissoftware/STEGOL"
+import stegol "github.com/synesissoftware/STEGoL"
 ```
 
 ## Components
@@ -32,11 +32,11 @@ T.B.C.
 
 ### Where to get help
 
-[GitHub Page](https://github.com/synesissoftware/STEGOL "GitHub Page")
+[GitHub Page](https://github.com/synesissoftware/STEGoL "GitHub Page")
 
 ### Contribution guidelines
 
-Defect reports, feature requests, and pull requests are welcome on https://github.com/synesissoftware/STEGOL.
+Defect reports, feature requests, and pull requests are welcome on https://github.com/synesissoftware/STEGoL.
 
 ### Dependencies
 
@@ -46,5 +46,5 @@ T.B.C.
 
 ### License
 
-**STEGOL** is released under the 3-clause BSD license. See [LICENSE](./LICENSE) for details.
+**STEGoL** is released under the 3-clause BSD license. See [LICENSE](./LICENSE) for details.
 
