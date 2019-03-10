@@ -17,7 +17,7 @@ T.B.C.
 
 ```Go
 
-import clasp "github.com/synesissoftware/STEGOL"
+import stegol "github.com/synesissoftware/STEGOL"
 ```
 
 ## Components
