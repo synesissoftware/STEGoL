@@ -46,12 +46,24 @@ import (
 	"testing"
 )
 
+/* /////////////////////////////////////////////////////////////////////////
+ * types
+ */
+
 type CheckStringFlag int
 
 const (
 
 	CheckStringFlag_None = 1 << iota
 )
+
+type StringCompareFunc func(expected, actual string) bool
+
+type stringCompareFunc func(expected interface{}, actual string) bool
+
+/* /////////////////////////////////////////////////////////////////////////
+ * helper functions
+ */
 
 func extract_flags(options ...interface{}) (result CheckStringFlag) {
 
@@ -71,10 +83,6 @@ func extract_flags(options ...interface{}) (result CheckStringFlag) {
 
 	return
 }
-
-type StringCompareFunc func(expected, actual string) bool
-
-type stringCompareFunc func(expected interface{}, actual string) bool
 
 func checkStringCompare(t *testing.T, expected interface{}, actual string, fn stringCompareFunc, frag0, frag1, frag2 string, options ...interface{}) {
 
@@ -118,6 +126,10 @@ func checkStringCompare(t *testing.T, expected interface{}, actual string, fn st
 		t.Errorf(format, actual, expected)
 	}
 }
+
+/* /////////////////////////////////////////////////////////////////////////
+ * API functions
+ */
 
 // CheckStringEqual() evaluates two strings, calling testing.T.Errorf() if
 // the evaluation fails. The evaluation is done by equality comparison.
