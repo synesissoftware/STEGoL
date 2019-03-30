@@ -1,5 +1,13 @@
 # **STEGoL** Changes
 
+## 0.2.0 - 30th March 2019
+
+* + added ``CheckStringNotEqual()`` (as a complement to ``CheckStringEqual()``)
+* + added ``CheckStringNotEqualTrimmed()`` (as a complement to ``CheckStringEqualTrimmed()``)
+* + added ``CheckStringNotEqualIgnoreCase()`` (as a complement to ``CheckStringEqualIgnoreCase()``)
+* + added ``CheckStringEqualChomped()`` and ``CheckStringNotEqualChomped()``
+* + added unit-tests
+
 ## 0.1.1 - 30th March 2019
 
 * + added missing ``t.Helper()`` calls to API functions

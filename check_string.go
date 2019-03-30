@@ -18,9 +18,9 @@
  * - Redistributions in binary form must reproduce the above copyright
  *   notice, this list of conditions and the following disclaimer in the
  *   documentation and/or other materials provided with the distribution.
- * - Neither the names of Matthew Wilson, Sean Kelly, Synesis Software nor
- *   the names of any contributors may be used to endorse or promote products
- *   derived from this software without specific prior written permission.
+ * - Neither the names of Matthew Wilson and Synesis Software nor the names
+ *   of any contributors may be used to endorse or promote products derived
+ *   from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
  * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -35,6 +35,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * ////////////////////////////////////////////////////////////////////// */
+
 
 package stegol
 
@@ -64,6 +65,35 @@ type stringCompareFunc func(expected interface{}, actual string) bool
 /* /////////////////////////////////////////////////////////////////////////
  * helper functions
  */
+
+func chomp_string(s string) (string) {
+
+	switch l := len(s); l {
+
+	case 0:
+
+		break
+	default:
+
+		if '\r' == s[l - 2] && '\n' == s[l - 1] {
+
+			s = s[0:l - 2]
+			break
+		}
+
+		fallthrough
+	case 1:
+
+		switch s[l - 1] {
+
+		case '\r', '\n':
+
+			s = s[0:l - 1]
+		}
+	}
+
+	return s
+}
 
 func extract_flags(options ...interface{}) (result CheckStringFlag) {
 
@@ -131,8 +161,9 @@ func checkStringCompare(t *testing.T, expected interface{}, actual string, fn st
  * API functions
  */
 
-// CheckStringEqual() evaluates two strings, calling testing.T.Errorf() if
-// the evaluation fails. The evaluation is done by equality comparison.
+// CheckStringEqual() evaluates two strings for equality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison.
 func CheckStringEqual(t *testing.T, expected, actual string, options ...interface{}) {
 
 	t.Helper()
@@ -140,7 +171,41 @@ func CheckStringEqual(t *testing.T, expected, actual string, options ...interfac
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return e.(string) == a }, "actual value", "is not equal to expected value", "", options...)
 }
 
-// CheckStringEqualTrimmed() evaluates two strings, calling
+// CheckStringNotEqual() evaluates two strings for inequality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison.
+func CheckStringNotEqual(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
+
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return e.(string) != a }, "actual value", "is not different to expected value", "", options...)
+}
+
+// CheckStringEqualChomped() evaluates two strings for equality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison after chomping the actual value.
+func CheckStringEqualChomped(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
+
+	actual = chomp_string(actual)
+
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return e.(string) == a }, "actual value (when chomped)", "is not equal to expected value", "", options...)
+}
+
+// CheckStringNotEqualChomped() evaluates two strings for inequality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison after chomping the actual value.
+func CheckStringNotEqualChomped(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
+
+	actual = chomp_string(actual)
+
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return e.(string) != a }, "actual value (when chomped)", "is not different to expected value", "", options...)
+}
+
+// CheckStringEqualTrimmed() evaluates two strings for equality, calling
 // testing.T.Errorf() if the evaluation fails. The evaluation is done by
 // equality comparison after whitespace-trimming the actual value.
 func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options ...interface{}) {
@@ -150,14 +215,36 @@ func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options ...i
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return strings.TrimSpace(e.(string)) == strings.TrimSpace(a) }, "actual value", "when trimmed, is different to expected value", "", options...)
 }
 
-// CheckStringEqualIgnoreCase() evaluates two strings, calling
+// CheckStringNotEqualTrimmed() evaluates two strings for inequality, calling
 // testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equalitycomparison via the strings.EqualFold() standard library function.
+// equality comparison after whitespace-trimming the actual value.
+func CheckStringNotEqualTrimmed(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
+
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return strings.TrimSpace(e.(string)) == strings.TrimSpace(a) }, "actual value", "when trimmed, is not different to expected value", "", options...)
+}
+
+// CheckStringEqualIgnoreCase() evaluates two strings for equality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison ignoring the case of the strings, via the
+// strings.EqualFold() standard library function.
 func CheckStringEqualIgnoreCase(t *testing.T, expected, actual string, options ...interface{}) {
 
 	t.Helper()
 
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return strings.EqualFold(e.(string), a) }, "actual value", "is different, when ignoring case, to expected value", "", options...)
+}
+
+// CheckStringEqualIgnoreCase() evaluates two strings for inequality, calling
+// testing.T.Errorf() if the evaluation fails. The evaluation is done by
+// equality comparison ignoring the case of the strings, via the
+// strings.EqualFold() standard library function.
+func CheckStringNotEqualIgnoreCase(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
+
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return !strings.EqualFold(e.(string), a) }, "actual value", "is not different, when ignoring case, to expected value", "", options...)
 }
 
 func CheckStringByStringMatch(t *testing.T, pattern string, actual string, options ...interface{}) {
@@ -185,9 +272,9 @@ func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareF
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return fn(e.(string), a) }, "actual value", "does not compare equal to expected value", "when compared by " + comparison_type, options...)
 }
 
-// CheckStringEqualAny() evaluates a string value against an array of
-// expected string values, calling testing.T.Errorf() if the evaluation
-// fails. The evaluation is done by equality comparison
+// CheckStringEqualAny() evaluates a string for equality against an array of
+// string values, calling testing.T.Errorf() if every evaluation fails. Each
+// evaluation is done by equality comparison.
 func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options ...interface{}) {
 
 	t.Helper()
