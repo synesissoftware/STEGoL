@@ -135,6 +135,8 @@ func checkStringCompare(t *testing.T, expected interface{}, actual string, fn st
 // the evaluation fails. The evaluation is done by equality comparison.
 func CheckStringEqual(t *testing.T, expected, actual string, options ...interface{}) {
 
+	t.Helper()
+
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return e.(string) == a }, "actual value", "is not equal to expected value", "", options...)
 }
 
@@ -142,6 +144,8 @@ func CheckStringEqual(t *testing.T, expected, actual string, options ...interfac
 // testing.T.Errorf() if the evaluation fails. The evaluation is done by
 // equality comparison after whitespace-trimming the actual value.
 func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options ...interface{}) {
+
+	t.Helper()
 
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return strings.TrimSpace(e.(string)) == strings.TrimSpace(a) }, "actual value", "when trimmed, is different to expected value", "", options...)
 }
@@ -151,10 +155,14 @@ func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options ...i
 // equalitycomparison via the strings.EqualFold() standard library function.
 func CheckStringEqualIgnoreCase(t *testing.T, expected, actual string, options ...interface{}) {
 
+	t.Helper()
+
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return strings.EqualFold(e.(string), a) }, "actual value", "is different, when ignoring case, to expected value", "", options...)
 }
 
 func CheckStringByStringMatch(t *testing.T, pattern string, actual string, options ...interface{}) {
+
+	t.Helper()
 
 	if re, err := regexp.Compile(pattern); err != nil {
 
@@ -172,6 +180,8 @@ func CheckStringByStringMatch(t *testing.T, pattern string, actual string, optio
 // string "when compared by ".
 func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareFunc, comparison_type string, options ...interface{}) {
 
+	t.Helper()
+
 	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return fn(e.(string), a) }, "actual value", "does not compare equal to expected value", "when compared by " + comparison_type, options...)
 }
 
@@ -179,6 +189,8 @@ func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareF
 // expected string values, calling testing.T.Errorf() if the evaluation
 // fails. The evaluation is done by equality comparison
 func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options ...interface{}) {
+
+	t.Helper()
 
 	checkStringCompare(t, expecteds, actual, func(e interface{}, a string) bool {
 
