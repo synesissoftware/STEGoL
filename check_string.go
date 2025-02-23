@@ -40,7 +40,6 @@
 package stegol
 
 import (
-
 	"fmt"
 	"regexp"
 	"strings"
@@ -54,7 +53,6 @@ import (
 type CheckStringFlag int
 
 const (
-
 	CheckStringFlag_None = 1 << iota
 )
 
@@ -66,7 +64,7 @@ type stringCompareFunc func(expected interface{}, actual string) bool
  * helper functions
  */
 
-func chomp_string(s string) (string) {
+func chomp_string(s string) string {
 
 	switch l := len(s); l {
 
@@ -75,20 +73,20 @@ func chomp_string(s string) (string) {
 		break
 	default:
 
-		if '\r' == s[l - 2] && '\n' == s[l - 1] {
+		if '\r' == s[l-2] && '\n' == s[l-1] {
 
-			s = s[0:l - 2]
+			s = s[0 : l-2]
 			break
 		}
 
 		fallthrough
 	case 1:
 
-		switch s[l - 1] {
+		switch s[l-1] {
 
 		case '\r', '\n':
 
-			s = s[0:l - 1]
+			s = s[0 : l-1]
 		}
 	}
 
@@ -107,7 +105,7 @@ func extract_flags(options ...interface{}) (result CheckStringFlag) {
 		default:
 
 			// Default is to ignore the rest
-			;
+
 		}
 	}
 
@@ -140,7 +138,7 @@ func checkStringCompare(t *testing.T, expected interface{}, actual string, fn st
 
 				do_multiline = true
 			}
-			;
+
 		}
 
 		format := ""
@@ -269,7 +267,7 @@ func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareF
 
 	t.Helper()
 
-	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return fn(e.(string), a) }, "actual value", "does not compare equal to expected value", "when compared by " + comparison_type, options...)
+	checkStringCompare(t, expected, actual, func(e interface{}, a string) bool { return fn(e.(string), a) }, "actual value", "does not compare equal to expected value", "when compared by "+comparison_type, options...)
 }
 
 // CheckStringEqualAny() evaluates a string for equality against an array of
@@ -294,5 +292,3 @@ func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, option
 }
 
 /* ///////////////////////////// end of file //////////////////////////// */
-
-

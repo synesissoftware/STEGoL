@@ -1,8 +1,6 @@
-
 package stegol_test
 
 import (
-
 	stegol "github.com/synesissoftware/STEGoL"
 
 	"testing"
@@ -67,4 +65,3 @@ func Test_CheckStringEqualTrimmed(t *testing.T) {
 	stegol.CheckStringEqualTrimmed(t, "a", "a\t")
 	stegol.CheckStringEqualTrimmed(t, "abc", "\tabc")
 }
-
