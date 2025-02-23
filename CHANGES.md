@@ -1,5 +1,12 @@
 # **STEGoL** Changes
 
+
+## 0.2.1 - 23rd February 2025
+
+* ~ 2025 Go formatting
+* ~ various boilerplate changes
+
+
 ## 0.2.0 - 30th March 2019
 
 * + added ``CheckStringNotEqual()`` (as a complement to ``CheckStringEqual()``)
