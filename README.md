@@ -1,4 +1,7 @@
 # STEGoL <!-- omit in toc -->
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/synesissoftware/STEGoL.svg)](https://pkg.go.dev/github.com/synesissoftware/STEGoL)
+
 **S**imple **T**esting **E**nhancements for the **Go** **L**anguage
 
 
