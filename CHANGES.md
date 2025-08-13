@@ -1,6 +1,12 @@
 # **STEGoL** Changes
 
 
+## 0.2.2 - 13th August 2025
+
+* boilerplate changes;
+* added **lib** example program;
+
+
 ## 0.2.1 - 23rd February 2025
 
 * ~ 2025 Go formatting
