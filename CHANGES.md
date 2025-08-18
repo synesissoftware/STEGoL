@@ -1,10 +1,18 @@
 # **STEGoL** Changes
 
 
+## 0.2.3 (beta 1) - 18th August 2025
+
+* GitHub Actions;
+* `interface{}` => `any`;
+* boilerplate;
+* documentation;
+
+
 ## 0.2.2 - 13th August 2025
 
 * boilerplate changes;
-* added **lib** example program;
+* added **libver** example program;
 
 
 ## 0.2.1 - 23rd February 2025
