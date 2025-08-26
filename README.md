@@ -10,15 +10,10 @@
 **S**imple **T**esting **E**nhancements for the **Go** **L**anguage
 
 
-## Introduction
-
-T.B.C.
-
-
 ## Table of Contents <!-- omit in toc -->
 
 - [Introduction](#introduction)
-- [Installation](#installation)
+- [Installation \& Use](#installation--use)
 - [Components](#components)
 - [Examples](#examples)
 - [Project Information](#project-information)
@@ -30,7 +25,21 @@ T.B.C.
 	- [License](#license)
 
 
-## Installation
+## Introduction
+
+As the name suggests, this is a simple library that provides a bunch of functions/algorithms to assist with testing **Go** components, as in:
+
+```Go
+import stegol "github.com/synesissoftware/STEGoL"
+
+```
+
+
+## Installation & Use
+
+```bash
+$ go get github.com/synesissoftware/STEGoL
+```
 
 ```Go
 import stegol "github.com/synesissoftware/STEGoL"
