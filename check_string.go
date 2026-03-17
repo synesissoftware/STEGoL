@@ -1,10 +1,10 @@
-// Copyright 2018-2025 Matthew Wilson and Synesis Information Systems. All
+// Copyright 2018-2026 Matthew Wilson and Synesis Information Systems. All
 // rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 /*
  * Created: 2nd April 2018
- * Updated: 23rd February 2025
+ * Updated: 17th March 2026
  */
 
 package stegol
@@ -99,7 +99,7 @@ func checkStringCompare(t *testing.T, expected any, actual string, fn stringComp
 
 			case string:
 
-				if strings.Index(exp_s, "\n") >= 0 || strings.Index(actual, "\n") >= 0 {
+				if strings.Contains(exp_s, "\n") || strings.Contains(actual, "\n") {
 
 					do_multiline = true
 				}
