@@ -40,60 +40,58 @@ import stegol "github.com/synesissoftware/STEGoL"
 ## Components
 
 ```Go
-// CheckStringEqual() evaluates two strings for equality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison.
+// Evaluates two strings for equality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison.
 func CheckStringEqual(t *testing.T, expected, actual string, options any)
 
-// CheckStringNotEqual() evaluates two strings for inequality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison.
+// Evaluates two strings for inequality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison.
 func CheckStringNotEqual(t *testing.T, expected, actual string, options any)
 
-// CheckStringEqualChomped() evaluates two strings for equality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison after chomping the actual value.
+// Evaluates two strings for equality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison after
+// chomping the actual value.
 func CheckStringEqualChomped(t *testing.T, expected, actual string, options any)
 
-// CheckStringNotEqualChomped() evaluates two strings for inequality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison after chomping the actual value.
+// Evaluates two strings for inequality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison after
+// chomping the actual value.
 func CheckStringNotEqualChomped(t *testing.T, expected, actual string, options any)
 
-// CheckStringEqualTrimmed() evaluates two strings for equality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison after whitespace-trimming the actual value.
+// Evaluates two strings for equality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison after
+// whitespace-trimming the actual value.
 func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options any)
 
-// CheckStringNotEqualTrimmed() evaluates two strings for inequality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison after whitespace-trimming the actual value.
+// Evaluates two strings for inequality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison after
+// whitespace-trimming the actual value.
 func CheckStringNotEqualTrimmed(t *testing.T, expected, actual string, options any)
 
-// CheckStringEqualIgnoreCase() evaluates two strings for equality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison ignoring the case of the strings, via the
-// strings.EqualFold() standard library function.
+// Evaluates two strings for equality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison ignoring
+// the case of the strings, via the strings.EqualFold() standard library
+// function.
 func CheckStringEqualIgnoreCase(t *testing.T, expected, actual string, options any)
 
-// CheckStringEqualIgnoreCase() evaluates two strings for inequality, calling
-// testing.T.Errorf() if the evaluation fails. The evaluation is done by
-// equality comparison ignoring the case of the strings, via the
-// strings.EqualFold() standard library function.
+// Evaluates two strings for inequality, calling testing.T.Errorf() if the
+// evaluation fails. The evaluation is done by equality comparison ignoring
+// the case of the strings, via the strings.EqualFold() standard library
+// function.
 func CheckStringNotEqualIgnoreCase(t *testing.T, expected, actual string, options any)
 
 func CheckStringByStringMatch(t *testing.T, pattern string, actual string, options any)
 
-// CheckStringCompare() evaluates two strings, calling testing.T.Errorf()
-// if the evaluation fails. The evaluation is done by the given
-// caller-supplied comparison function, whose brief descriptor
-// comparison_type, e.g. "regular expression" will be prefixed with the
-// string "when compared by ".
+// Evaluates two strings, calling testing.T.Errorf() if the evaluation
+// fails. The evaluation is done by the given caller-supplied comparison
+// function, whose brief descriptor comparison_type, e.g.
+// "regular expression" will be prefixed with the string
+// "when compared by ".
 func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareFunc, comparison_type string, options any)
 
-// CheckStringEqualAny() evaluates a string for equality against an array of
-// string values, calling testing.T.Errorf() if every evaluation fails. Each
-// evaluation is done by equality comparison.
+// Evaluates a string for equality against an array of string values,
+// calling testing.T.Errorf() if every evaluation fails. Each evaluation is
+// done by equality comparison.
 func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options any)
 ```
 

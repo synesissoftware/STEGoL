@@ -1,6 +1,13 @@
 # **STEGoL** Changes
 
 
+## 0.2.3 (beta 2) - 17th March 2026
+
+* minor documentation changes;
+* minor layout changes;
+* ;
+
+
 ## 0.2.3 (beta 1) - 18th August 2025
 
 * GitHub Actions;
