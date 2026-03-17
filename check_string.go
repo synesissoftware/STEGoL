@@ -323,6 +323,8 @@ func CheckStringNotEqualIgnoreCase(
 	)
 }
 
+// Evaluates a string against a regular expression, calling
+// testing.T.Error() if it does not.
 func CheckStringByStringMatch(
 	t *testing.T,
 	pattern string,

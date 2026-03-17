@@ -20,6 +20,7 @@ T.B.C.
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Components](#components)
+	- [Strings](#strings)
 - [Examples](#examples)
 - [Project Information](#project-information)
 	- [Where to get help](#where-to-get-help)
@@ -39,60 +40,65 @@ import stegol "github.com/synesissoftware/STEGoL"
 
 ## Components
 
+
+### Strings
+
 ```Go
 // Evaluates two strings for equality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison.
-func CheckStringEqual(t *testing.T, expected, actual string, options any)
+func CheckStringEqual(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for inequality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison.
-func CheckStringNotEqual(t *testing.T, expected, actual string, options any)
+func CheckStringNotEqual(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for equality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison after
 // chomping the actual value.
-func CheckStringEqualChomped(t *testing.T, expected, actual string, options any)
+func CheckStringEqualChomped(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for inequality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison after
 // chomping the actual value.
-func CheckStringNotEqualChomped(t *testing.T, expected, actual string, options any)
+func CheckStringNotEqualChomped(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for equality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison after
 // whitespace-trimming the actual value.
-func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options any)
+func CheckStringEqualTrimmed(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for inequality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison after
 // whitespace-trimming the actual value.
-func CheckStringNotEqualTrimmed(t *testing.T, expected, actual string, options any)
+func CheckStringNotEqualTrimmed(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for equality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison ignoring
 // the case of the strings, via the strings.EqualFold() standard library
 // function.
-func CheckStringEqualIgnoreCase(t *testing.T, expected, actual string, options any)
+func CheckStringEqualIgnoreCase(t *testing.T, expected, actual string, options ...any)
 
 // Evaluates two strings for inequality, calling testing.T.Errorf() if the
 // evaluation fails. The evaluation is done by equality comparison ignoring
 // the case of the strings, via the strings.EqualFold() standard library
 // function.
-func CheckStringNotEqualIgnoreCase(t *testing.T, expected, actual string, options any)
+func CheckStringNotEqualIgnoreCase(t *testing.T, expected, actual string, options ...any)
 
-func CheckStringByStringMatch(t *testing.T, pattern string, actual string, options any)
+// Evaluates a string against a regular expression, calling
+// testing.T.Error() if it does not.
+func CheckStringByStringMatch(t *testing.T, pattern string, actual string, options ...any)
 
 // Evaluates two strings, calling testing.T.Errorf() if the evaluation
 // fails. The evaluation is done by the given caller-supplied comparison
 // function, whose brief descriptor comparison_type, e.g.
 // "regular expression" will be prefixed with the string
 // "when compared by ".
-func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareFunc, comparison_type string, options any)
+func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareFunc, comparison_type string, options ...any)
 
 // Evaluates a string for equality against an array of string values,
 // calling testing.T.Errorf() if every evaluation fails. Each evaluation is
 // done by equality comparison.
-func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options any)
+func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options ...any)
 ```
 
 
