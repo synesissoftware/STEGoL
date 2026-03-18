@@ -20,6 +20,8 @@ T.B.C.
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Components](#components)
+	- [Boolean](#boolean)
+	- [Integers](#integers)
 	- [Strings](#strings)
 - [Examples](#examples)
 - [Project Information](#project-information)
@@ -39,6 +41,48 @@ import stegol "github.com/synesissoftware/STEGoL"
 
 
 ## Components
+
+
+### Boolean
+
+```Go
+// Evaluates a boolean value or predicate to obtain a boolean value, calling
+// testing.T.Errorf() if the value is not false.
+func IsFalse[T ~bool | func() bool](t *testing.T, value T)
+
+// Evaluates a boolean value or predicate to obtain a boolean value, calling
+// testing.T.Errorf() if the value is not true.
+func IsTrue[T ~bool | Pfunc() bool](t *testing.T, value T)
+```
+
+
+### Integers
+
+```Go
+// Evaluates two integers, of arbitrary type, for equality comparison,
+// calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerEqual[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+
+// Evaluates two integers, of arbitrary type, for less-than comparison,
+// calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerLess[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+
+// Evaluates two integers, of arbitrary type, for less-than-or-equal
+// comparison, calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerLessOrEqual[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+
+// Evaluates two integers, of arbitrary type, for greater-than comparison,
+// calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerGreater[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+
+// Evaluates two integers, of arbitrary type, for greater-than-or-equal
+// comparison, calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerGreaterOrEqual[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+
+// Evaluates two integers, of arbitrary type, for inequality comparison,
+// calling testing.T.Errorf() if the evaluation fails.
+func CheckIntegerNotEqual[T1 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr, T2 int | int8 | int16 | int32 | int64 | uint | uint8 | uint16 | uint32 | uint64 | uintptr](t *testing.T, expected T1, actual T2)
+```
 
 
 ### Strings
@@ -127,7 +171,7 @@ Defect reports, feature requests, and pull requests are welcome on https://githu
 
 #### Development/Testing Dependencies
 
-* [**require**](https://github.com/stretchr/testify/);
+None
 
 
 ### Related projects

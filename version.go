@@ -4,7 +4,7 @@
 
 /*
  * Created: 2nd April 2018
- * Updated: 18th August 2025
+ * Updated: 18th March 2026
  */
 
 package stegol
@@ -13,8 +13,8 @@ import "github.com/synesissoftware/ver2go"
 
 const (
 	VersionMajor uint16 = 0
-	VersionMinor uint16 = 2
-	VersionPatch uint16 = 3
+	VersionMinor uint16 = 3
+	VersionPatch uint16 = 0
 	VersionAB    uint16 = 0x8001
 	Version      uint64 = (uint64(VersionMajor) << 48) + (uint64(VersionMinor) << 32) + (uint64(VersionPatch) << 16) + (uint64(VersionAB) << 0)
 )
