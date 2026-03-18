@@ -1,11 +1,11 @@
 # **STEGoL** Changes
 
 
-## 0.2.3 (beta 2) - 17th March 2026
+## 0.2.3 (beta 2) - 18th March 2026
 
+* added `IsFalse()` and `IsTrue()`;
 * minor documentation changes;
 * minor layout changes;
-* ;
 
 
 ## 0.2.3 (beta 1) - 18th August 2025
