@@ -1,6 +1,17 @@
 # **STEGoL** Changes
 
 
+## 0.3.0 (beta 1) - 18th March 2026
+
+* added integer test functions: `CheckIntegerEqual()`, `CheckIntegerNotEqual()`, `CheckIntegerLess()`, `CheckIntegerLessOrEqual()`, `CheckIntegerGreater()`, `CheckIntegerGreaterOrEqual()`;
+* added integer helper types: `SignedInteger`, `UnsignedInteger`, `Integer` (and `...Convertible` variants);
+* added `IsFalse()` and `IsTrue()` test functions;
+* updated dependency `ver2go` to v0.1.3;
+* removed `testify/require` dependency (tests now use STEGoL checks);
+* documentation updates;
+* minor layout changes;
+
+
 ## 0.2.3 (beta 1) - 18th August 2025
 
 * GitHub Actions;
