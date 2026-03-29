@@ -1,6 +1,11 @@
 # **STEGoL** Changes
 
 
+## 0.3.0 - 29th March 2026
+
+* 0.3.0
+
+
 ## 0.3.0 (beta 1) - 18th March 2026
 
 * added integer test functions: `CheckIntegerEqual()`, `CheckIntegerNotEqual()`, `CheckIntegerLess()`, `CheckIntegerLessOrEqual()`, `CheckIntegerGreater()`, `CheckIntegerGreaterOrEqual()`;
