@@ -1,0 +1,2 @@
+STEGoL provides Simple Testing Enhancements for the Go Language
+Copyright (c) 2018-2026, Matthew Wilson and Synesis Information Systems
