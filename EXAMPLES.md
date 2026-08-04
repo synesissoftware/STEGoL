@@ -1,4 +1,4 @@
-# STEGoL Examples
+# STEGoL - Examples <!-- omit in toc -->
 
 | Name | Source & Description | Summary |
 | ---- | -------------------- | ------- |

@@ -1,13 +1,14 @@
 # STEGoL <!-- omit in toc -->
 
+**S**imple **T**esting **E**nhancements for the **Go** **L**anguage
+
+![Language](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![GitHub release](https://img.shields.io/github/v/release/synesissoftware/STEGoL.svg)](https://github.com/synesissoftware/STEGoL/releases/latest)
 [![Last Commit](https://img.shields.io/github/last-commit/synesissoftware/STEGoL)](https://github.com/synesissoftware/STEGoL/commits/master)
 [![Go](https://github.com/synesissoftware/STEGoL/actions/workflows/go.yml/badge.svg)](https://github.com/synesissoftware/STEGoL/actions/workflows/go.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/synesissoftware/STEGoL)](https://goreportcard.com/report/github.com/synesissoftware/STEGoL)
 [![Go Reference](https://pkg.go.dev/badge/github.com/synesissoftware/STEGoL.svg)](https://pkg.go.dev/github.com/synesissoftware/STEGoL)
-
-**S**imple **T**esting **E**nhancements for the **Go** **L**anguage
 
 
 ## Table of Contents <!-- omit in toc -->
@@ -191,4 +192,3 @@ T.B.C.
 ### License
 
 **STEGoL** is released under the 3-clause BSD license. See [LICENSE](./LICENSE) for details.
-

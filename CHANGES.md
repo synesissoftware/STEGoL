@@ -1,4 +1,4 @@
-# **STEGoL** Changes
+# STEGoL - CHANGES <!-- omit in toc -->
 
 
 ## 0.3.0 - 29th March 2026
