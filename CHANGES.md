@@ -1,5 +1,10 @@
 # STEGoL - Changes <!-- omit in toc -->
 
+## 0.3.1 - 23rd August 2026
+
+* CI modernisation (matrix + lint);
+* boilerplate additions (scripts, markdown docs, project identity);
+* version string updated for the 0.3.1 release;
 
 ## 0.3.0 - 29th March 2026
 
