@@ -186,7 +186,11 @@ None
 
 ### Related projects
 
-T.B.C.
+Projects in which **STEGoL** is used include:
+
+* [**ANGoLS**](https://github.com/synesissoftware/ANGoLS/) (development/testing);
+* [**Diagnosticism.Go**](https://github.com/synesissoftware/Diagnosticism.Go/);
+* [**syngo**](https://github.com/synesissoftware/syngo/).
 
 
 ### License
