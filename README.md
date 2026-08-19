@@ -186,9 +186,16 @@ None
 
 ### Related projects
 
-T.B.C.
+Projects in which **STEGoL** is used include:
+
+* [**ANGoLS**](https://github.com/synesissoftware/ANGoLS/) (development/testing);
+* [**Diagnosticism.Go**](https://github.com/synesissoftware/Diagnosticism.Go/);
+* [**syngo**](https://github.com/synesissoftware/syngo/).
 
 
 ### License
 
 **STEGoL** is released under the 3-clause BSD license. See [LICENSE](./LICENSE) for details.
+
+
+<!-- ########################### end of file ########################### -->

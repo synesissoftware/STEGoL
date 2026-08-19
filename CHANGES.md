@@ -1,4 +1,4 @@
-# STEGoL - CHANGES <!-- omit in toc -->
+# STEGoL - Changes <!-- omit in toc -->
 
 
 ## 0.3.0 - 29th March 2026
@@ -6,7 +6,7 @@
 * 0.3.0
 
 
-## 0.3.0 (beta 1) - 18th March 2026
+## 0.3.0-beta1 - 18th March 2026
 
 * added integer test functions: `CheckIntegerEqual()`, `CheckIntegerNotEqual()`, `CheckIntegerLess()`, `CheckIntegerLessOrEqual()`, `CheckIntegerGreater()`, `CheckIntegerGreaterOrEqual()`;
 * added integer helper types: `SignedInteger`, `UnsignedInteger`, `Integer` (and `...Convertible` variants);
@@ -17,7 +17,7 @@
 * minor layout changes;
 
 
-## 0.2.3 (beta 1) - 18th August 2025
+## 0.2.3-beta1 - 18th August 2025
 
 * GitHub Actions;
 * `interface{}` => `any`;
@@ -55,4 +55,7 @@
 ## 0.0.0 - 11th March 2019
 
 FIRST PUBLIC RELEASE
+
+
+<!-- ########################### end of file ########################### -->
 
