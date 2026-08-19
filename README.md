@@ -7,7 +7,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/synesissoftware/STEGoL.svg)](https://github.com/synesissoftware/STEGoL/releases/latest)
 [![Last Commit](https://img.shields.io/github/last-commit/synesissoftware/STEGoL)](https://github.com/synesissoftware/STEGoL/commits/master)
 [![Go](https://github.com/synesissoftware/STEGoL/actions/workflows/go.yml/badge.svg)](https://github.com/synesissoftware/STEGoL/actions/workflows/go.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/synesissoftware/STEGoL)](https://goreportcard.com/report/github.com/synesissoftware/STEGoL)
 [![Go Reference](https://pkg.go.dev/badge/github.com/synesissoftware/STEGoL.svg)](https://pkg.go.dev/github.com/synesissoftware/STEGoL)
 
 
