@@ -3,6 +3,7 @@
 
 | Date               | News Item                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------ |
+| 20th August 2026   | Release of [**STEGoL** 0.4.1](https://github.com/synesissoftware/STEGoL/releases/tag/0.4.1) |
 | 20th August 2026   | Release of [**STEGoL** 0.4.0](https://github.com/synesissoftware/STEGoL/releases/tag/0.4.0) |
 | 20th August 2026   | Release of [**STEGoL** 0.3.1](https://github.com/synesissoftware/STEGoL/releases/tag/0.3.1) |
 | 29th March 2026    | Release of [**STEGoL** 0.3.0](https://github.com/synesissoftware/STEGoL/releases/tag/0.3.0) |

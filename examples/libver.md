@@ -8,13 +8,13 @@ Displays the **STEGoL** library version and terminates.
 
 ## Source
 
-See [examples/libver.go](./examples/libver.go).
+See [examples/libver/main.go](./libver/main.go).
 
 
 ## Execution
 
 ```bash
-go run ./examples/libver.go
+go run ./examples/libver
 ```
 
 
