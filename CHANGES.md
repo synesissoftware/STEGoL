@@ -1,6 +1,13 @@
 # STEGoL - Changes <!-- omit in toc -->
 
 
+## 0.4.1 - 20th August 2026
+
+* enforced Synesis Go import order via **gci** (**.golangci.yml**, **examples/.golangci.yml**);
+* restructured **examples/libver** into **examples/libver/main.go** so `go test ./...` no longer collides on multiple `main`s;
+* version string updated for the 0.4.1 release;
+
+
 ## 0.4.0 - 20th August 2026
 
 * added **Version()** (replacing the **Version** constant), formed by **ver2go.CombineVersion()**;

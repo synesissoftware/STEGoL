@@ -8,6 +8,6 @@ import (
 )
 
 func main() {
-	fmt.Printf("stegol v%s\n", stegol.VersionString())
+	fmt.Printf("STEGoL v%s\n", stegol.VersionString())
 	fmt.Printf("ver2go v%s\n", ver2go.VersionString())
 }

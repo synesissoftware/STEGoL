@@ -16,7 +16,7 @@ import (
 const (
 	Expected_VersionMajor uint16 = 0
 	Expected_VersionMinor uint16 = 4
-	Expected_VersionPatch uint16 = 0
+	Expected_VersionPatch uint16 = 1
 	Expected_VersionAB    uint16 = 0xFFFF
 )
 
@@ -28,9 +28,9 @@ func Test_Version_Elements(t *testing.T) {
 }
 
 func Test_Version(t *testing.T) {
-	CheckIntegerEqual(t, 0x0000_0004_0000_FFFF, Version())
+	CheckIntegerEqual(t, 0x0000_0004_0001_FFFF, Version())
 }
 
 func Test_Version_String(t *testing.T) {
-	CheckStringEqual(t, "0.4.0", VersionString())
+	CheckStringEqual(t, "0.4.1", VersionString())
 }
