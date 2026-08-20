@@ -18,6 +18,7 @@
 	- [Boolean](#boolean)
 	- [Integers](#integers)
 	- [Strings](#strings)
+	- [Version](#version)
 - [Examples](#examples)
 - [Project Information](#project-information)
 	- [Where to get help](#where-to-get-help)
@@ -152,6 +153,21 @@ func CheckStringCompare(t *testing.T, expected, actual string, fn StringCompareF
 // calling testing.T.Errorf() if every evaluation fails. Each evaluation is
 // done by equality comparison.
 func CheckStringEqualAny(t *testing.T, expecteds []string, actual string, options ...any)
+```
+
+
+### Version
+
+```Go
+const (
+	VersionMajor uint16 = /* ... */
+	VersionMinor uint16 = /* ... */
+	VersionPatch uint16 = /* ... */
+	VersionAB    uint16 = /* ... */
+)
+
+func Version() uint64
+func VersionString() string
 ```
 
 
